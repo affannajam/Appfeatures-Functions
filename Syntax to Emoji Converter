@@ -1,0 +1,39 @@
+
+#This is a simple project that designs the ide of how punctuation marks can be converted into emojis in chats or posts, used in apps like facebook and messenger
+
+#The Function starts here.
+
+def emoji_converter(message):
+    words = message.split (" ") #This is to split words in a sentence.
+
+    #over here between the curly bracktes you can add and/or change what puntuations can be converted to emoji's, just follow how the rest have been done.
+    
+    emojis = {                    
+        ":)" : "🙂",
+        ":(" : "🙁",
+        ";)" : "😉",
+        ":D" : "😁",
+        ":p" : "😋",
+        ":o" : "😯"
+        }
+    output = ""
+    for word in words:
+        output = output + emojis.get(word, word) + " "
+    return output
+
+#The function ends here.
+
+
+#This next part is to check the output. You can change or edit this to get the type of output you want
+message = input("message > ")
+print(emoji_converter(message))
+""
+
+while not message == "exit":
+    message = input("message > ")
+    print(emoji_converter(message))
+    ""
+else:
+    exit   
+
+#End of Program.
